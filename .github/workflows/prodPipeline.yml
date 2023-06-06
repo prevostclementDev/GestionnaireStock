@@ -1,8 +1,8 @@
 on: push
-name: 🚀 Deploy on preprod
+name: 🚀 Auto deploy
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy on preprod
     runs-on: ubuntu-latest
     environment: FTP
 
