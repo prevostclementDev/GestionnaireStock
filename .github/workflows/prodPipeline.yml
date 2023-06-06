@@ -8,11 +8,9 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-        run: ${{ secrets.USER }}
-
       - name: 📂 Sync all files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.clementprevost.fr
+          server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.MDP }}
