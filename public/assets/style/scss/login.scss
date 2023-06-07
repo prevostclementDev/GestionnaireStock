@@ -1,0 +1,66 @@
+@import "sources/base";
+@import "sources/form_core_ui";
+@import "sources/link_core_ui";
+
+#loginpage {
+
+  width: 100vw;
+  min-height: 100vh;
+
+  @include flex(flex-end,flex-start);
+
+  .backgroundfixedimg,.filterbackground--white {
+    @include fix_to_parent;
+  }
+
+  .backgroundfixedimg {
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .filterbackground--white {
+    background: rgba(255, 255, 255, 0.4);
+    z-index: 1;
+  }
+
+  .connectionbar {
+    position: relative;
+    z-index: 2;
+    background: $c-background-secondary;
+    border-radius: 15px 0px 0px 15px;
+    min-width: 600px;
+    min-height: 100vh;
+    padding: 40px 50px;
+
+    .logocontainer {
+      @include flex(flex-end);
+    }
+
+    .toptitle {
+      @include flex(center,center,column);
+      margin-top: 100px;
+      img {
+        max-width: 140px;
+        max-height: 140px;
+        object-fit: contain;
+      }
+      h1 {
+        @include lexend( 20px , 700 );
+        margin-top: 20px;
+        max-width: 60%;
+        text-align: center;
+      }
+    }
+
+    .formspace {
+      @include flex();
+      padding: 30px 30px 20px;
+      margin: 20px auto 0;
+      background: $c-background-modal;
+      border-radius: $global-component-raduis;
+      width: 80%;
+    }
+
+  }
+
+}
