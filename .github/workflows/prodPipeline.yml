@@ -10,6 +10,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
+      - name: Composer
+        uses: php-actions/composer@v6
+        with:
+          dev: no
+          args: --profile --ignore-platform-reqs
+
       - name: 📂 Sync all files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
