@@ -1,8 +1,8 @@
 on: push
-name: 🚀 Auto deploy
+name: 🚀 Deploy to gestionnairedestock.clementprevost.fr
 jobs:
   web-deploy:
-    name: 🎉 Deploy on preprod
+    name: 🎉 Deploy start
     runs-on: ubuntu-latest
     environment: FTP
 
@@ -10,7 +10,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Composer
+      - name: Composer update
         uses: php-actions/composer@v6
         with:
           dev: no
