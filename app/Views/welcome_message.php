@@ -10,7 +10,7 @@
     <body>
 
         <script src="<?= base_url('assets/js/test_sources-min.js'); ?>"></script>
-        <h1>Ma page d'accueil</h1>
+        <h1>Ma page d'accueil test</h1>
 
     </body>
 </html>
