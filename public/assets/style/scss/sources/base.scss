@@ -1,0 +1,75 @@
+@import "reset";
+//####################################################
+// TYPOGRAPHIE
+//####################################################
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$f-lexend : 'Lexend', sans-serif;
+
+//####################################################
+// COLOR
+//####################################################
+$c-primary: #231E1E;
+$c-secondary : #C60E0E;
+
+$c-background : #F8F8F8;
+$c-background-secondary : #FFFFFF;
+
+$c-background-modal : #F8F8F8;
+$c-border-modal : #E4E4E4;
+$box-shadow-modal : 0px 1px 4px #E4E4E4;
+$global-component-raduis : 8px;
+
+$c-text-link-not-selected : rgba(35, 30, 30, 0.8);
+$c-border : rgba(35, 30, 30, 0.4);
+
+$c-placeholder-text : rgba(35, 30, 30, 0.7);
+$c-checkbox-on-primary : #F8F8F8;
+$c-checkbox-on-clear : $c-text-link-not-selected;
+$c-input-border : 1px solid rgba(35, 30, 30, 0.5);
+$input-border-raduis : $global-component-raduis;
+
+$c-table-primary : $c-background-secondary;
+$c-table-secondary : #E2E2E2;
+
+$c-notice-warning-background : rgba(229, 184, 22, 0.3);
+$c-notice-warning-border : #E5B816;
+
+$c-notice-success-background : rgba(43, 217, 39, 0.2);
+$c-notice-success-border : #2BD927;
+
+$c-notice-error-background : rgba(198, 14, 14, 0.2);
+$c-notice-error-border : $c-secondary;
+
+$c-quantity-good: #2BD927;
+$c-quantity-less: #EA0C0C;
+
+//####################################################
+// TOOLS
+//####################################################
+
+// FLEX
+@mixin flex( $justify : center, $align : center, $direction : row ){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// LEXEND FONT
+@mixin lexend( $size , $weight , $color : $c-primary ) {
+  font-family: $f-lexend;
+  font-style: normal;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Fix to parent
+@mixin fix_to_parent(){
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

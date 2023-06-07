@@ -2,10 +2,17 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\View\Parser;
+
 class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = [
+            'head_title' => 'page d\'accueil',
+            'page_title' => 'Connexion à votre espace entreprise',
+        ];
+
+        return view('login/connection',$data);
     }
 }

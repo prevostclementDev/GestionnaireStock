@@ -1,0 +1,4 @@
+a.bordered-link {
+  @include lexend( 14px , 500 );
+  text-decoration: underline;
+}

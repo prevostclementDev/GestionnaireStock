@@ -1,0 +1,64 @@
+form {
+  @include flex(flex-start,flex-start,column);
+  width: 100%;
+  height: 100%;
+}
+
+// ###################
+// LABEL & INPUT BASIC
+// ###################
+label {
+  @include flex(flex-start,flex-start,column);
+  margin: 5px 0;
+  width: 100%;
+
+  span {
+    margin-bottom: 5px;
+    @include lexend( 15px , 500 );
+  }
+
+  input {
+    width: 100%;
+    background: $c-background;
+    border: $c-input-border;
+    border-radius: $input-border-raduis;
+    padding: 10px 15px;
+    @include lexend( 14px , 500 );
+
+    &::placeholder {
+      @include lexend( 14px , 500 , $c-placeholder-text );
+    }
+
+    &:focus-visible,&:focus {
+      outline: 2px solid $c-primary;
+    }
+
+  }
+
+}
+
+// ###################
+// SUBMIT BUTTON STYLE
+// ###################
+input[type=submit] {
+  background: $c-primary;
+  outline: none;
+  border: none;
+  @include lexend( 14px , 400 , $c-background);
+  padding: 9px 12px;
+  border-radius: $input-border-raduis;
+  cursor: pointer;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 20px;
+  @include flex(center,center,column);
+  &.left {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  a {
+    margin-top: 10px;
+  }
+}
