@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll(".update_step");if(0<e.length)e.forEach(e=>{e.onclick=e=>{e.preventDefault();document.querySelector("#step1").classList.add("inactive"),document.querySelector("#step2").classList.remove("inactive"),document.querySelector(".step_v.step2").classList.add("active")}})});

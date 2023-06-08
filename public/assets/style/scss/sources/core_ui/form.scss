@@ -40,7 +40,7 @@ label {
 // ###################
 // SUBMIT BUTTON STYLE
 // ###################
-input[type=submit] {
+input[type=submit],button {
   background: $c-primary;
   outline: none;
   border: none;
