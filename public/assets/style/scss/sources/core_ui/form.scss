@@ -40,7 +40,7 @@ label {
 // ###################
 // SUBMIT BUTTON STYLE
 // ###################
-input[type=submit],button {
+input[type=submit],button.submit_ui_form {
   background: $c-primary;
   outline: none;
   border: none;
@@ -48,6 +48,16 @@ input[type=submit],button {
   padding: 9px 12px;
   border-radius: $input-border-raduis;
   cursor: pointer;
+}
+
+select {
+  outline: none;
+  border: 1px solid $c-primary;
+  @include lexend( 14px , 400 , $c-placeholder-text);
+  padding: 9px 30px 9px 12px;
+  border-radius: $input-border-raduis;
+  cursor: pointer;
+  background: $c-background;
 }
 
 .submit {
@@ -60,5 +70,14 @@ input[type=submit],button {
   }
   a {
     margin-top: 10px;
+  }
+}
+
+.button-action-ui {
+  &.not-show-ui-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }

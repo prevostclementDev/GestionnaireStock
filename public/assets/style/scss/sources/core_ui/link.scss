@@ -1,4 +1,44 @@
-a.bordered-link {
-  @include lexend( 14px , 500 );
-  text-decoration: underline;
+a {
+
+  &.bordered-link {
+    @include lexend( 14px , 500 );
+    text-decoration: underline;
+  }
+
+  &.navigation_link {
+    @include flex(flex-start);
+    padding: 9px 18px 9px 9px;
+    cursor: pointer;
+    background: $c-background-secondary;
+    @include lexend( 14px , 400 );
+    border-radius: $global-component-raduis;
+    text-decoration: none;
+    svg {
+      margin-right: 10px;
+      margin-left: 5px;
+      path {
+        fill-opacity: 1;
+        fill : $c-text-link-not-selected;
+      }
+    }
+    &.selected {
+      background: $c-primary;
+      color: $c-background-secondary;
+      svg {
+        path {
+          fill: $c-background-secondary;
+        }
+      }
+    }
+  }
+
+  &.text_ui_link {
+    text-decoration: none;
+    @include lexend( 14px , 600 , $c-text-link-not-selected);
+    cursor: pointer;
+    &:hover {
+      color: $c-primary;
+    }
+  }
+
 }

@@ -1,0 +1,197 @@
+@import "base";
+@import "core_ui/form";
+@import "core_ui/link";
+
+#global-container {
+
+  position: relative;
+  min-height: 100vh;
+  height: auto;
+
+  @include flex(flex-start,flex-start);
+
+  #navigation-container {
+    position: sticky;
+    top: 0;
+    width: 255px;
+    height: 100vh;
+    background: $c-background-secondary;
+    border-right: $c-border-modal;
+    overflow-y: auto;
+
+    padding: 33px 15px 30px;
+
+    @include flex(space-between,flex-start,column);
+
+    .logo-entreprise {
+      width: fit-content;
+      height: fit-content;
+      margin: 0 auto;
+    }
+
+    .navigation {
+      p {
+        @include lexend( 14px , 700 );
+        margin-bottom: 20px;
+        margin-left: 2px;
+      }
+      ul {
+        padding: 0 0 0 8px;
+        li {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .langs-selection {
+      position: relative;
+      padding: 0 0 0 8px;
+      button {
+        position: relative;
+        z-index: 1;
+      }
+      .lang-selector {
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        padding: 20px 40px;
+        background: $c-background;
+        z-index: 0;
+        display: none;
+        border-radius: $global-component-raduis;
+        border: $c-border-modal;
+        &.active {
+          display: block;
+        }
+        .lang-list {
+          li {
+            margin-bottom: 5px;
+            @include lexend( 14px , 600 );
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &.active {
+              a {
+                color: $c-secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  #content-left-container {
+    width: calc(100% - 255px);
+
+    #toolsbar-container {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: red;
+      height: 75px;
+      background: $c-background-secondary;
+      border-bottom: $c-border-modal;
+
+      @include flex(space-between);
+
+      .stockage-update {
+        margin-left: 20px;
+        form {
+          @include flex();
+          select {
+            height: 36px;
+          }
+          .submit_ui_form {
+            margin-left: 8px;
+            height: 36px;
+          }
+        }
+      }
+
+      .profil-action {
+        position: relative;
+        .container-profil {
+          margin-right: 20px;
+          @include flex();
+          @include lexend( 14px , 300 );
+          p {
+            margin-right: 10px;
+            text-align: right;
+            span {
+              font-weight: 500;
+            }
+          }
+          .button-action-ui {
+            background: #D9D9D9;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+        }
+
+        .container-action {
+          display: none;
+          position: absolute;
+          right: 20px;
+          top: 100%;
+          background: $c-background-secondary;
+          border: $c-border-modal;
+          padding: 10px 15px;
+          border-radius: $global-component-raduis;
+          .action-list {
+            li {
+              margin-bottom: 8px;
+              &:last-child {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .container-action {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+
+    #content-container {
+      width: 100%;
+      background: $c-background;
+      min-height: calc(100vh - 75px);
+      height: fit-content;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+  #global-container #content-left-container #toolsbar-container .profil-action .container-profil p {
+    display: none;
+  }
+  #global-container #navigation-container .navigation ul li a span {
+    display: none;
+  }
+  #global-container #navigation-container .navigation ul li a {
+    padding: 10px;
+    justify-content: center;
+  }
+  #global-container #navigation-container .navigation ul li a svg {
+    margin: 0;
+    width: 25px;
+    height: 25px;
+  }
+  #global-container #navigation-container {
+    width: 90px;
+    overflow-x: visible;
+  }
+  #global-container #content-left-container {
+    width: calc(100% - 90px);
+  }
+}

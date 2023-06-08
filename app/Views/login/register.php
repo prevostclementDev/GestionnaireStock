@@ -17,7 +17,7 @@
             <input type="text" name="entreprise_location" placeholder="France, Espagne...">
         </label>
         <div class="submit left">
-            <button class="update_step">Continuer l'inscription</button>
+            <button class="update_step submit_ui_form">Continuer l'inscription</button>
             <a class="bordered-link" href="login/entreprise">Se connecter</a>
         </div>
     </div>
@@ -46,6 +46,6 @@
 </form>
 <?= $this->endSection() ?>
 
-<?= $this->section('js_after') ?>
+<?= $this->section('js_after_content') ?>
 <script src="assets/js/login-min.js"></script>
 <?= $this->endSection() ?>
