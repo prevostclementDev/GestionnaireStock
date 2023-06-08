@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("#select-langs");if(null!==e&&void 0!==e){const t=document.querySelector(".lang-selector");e.onclick=()=>{t.classList.contains("active")?t.classList.remove("active"):t.classList.add("active")}}});
