@@ -1,11 +1,17 @@
 @import "sources/base";
-@import "sources/form_core_ui";
-@import "sources/link_core_ui";
+@import "sources/core_ui/form";
+@import "sources/core_ui/link";
+
+body {
+  overflow-x: hidden;
+  height: fit-content;
+}
 
 #loginpage {
 
   width: 100vw;
   min-height: 100vh;
+  position: relative;
 
   @include flex(flex-end,flex-start);
 
@@ -59,8 +65,49 @@
       background: $c-background-modal;
       border-radius: $global-component-raduis;
       width: 80%;
+
+      .step_visibility {
+        @include flex(space-between);
+        width: 40%;
+        margin: 0px auto 10px;
+        .step_v {
+          width: calc(50% - 8px);
+          border-bottom: 2px solid $c-primary;
+          @include lexend( 18px , 500 );
+          padding-bottom: 5px;
+          &.active {
+            border-color: $c-secondary;
+          }
+        }
+      }
+
+      .register.step {
+        width: 100%;
+        height: fit-content;
+
+        &.inactive {
+          display: none;
+        }
+
+      }
+
     }
 
   }
 
+}
+
+@media screen and (max-width: 720px) {
+  #loginpage {
+    justify-content: flex-start;
+    .connectionbar {
+      width: 100%;
+      min-width: auto;
+      padding: 25px 30px;
+      border-radius: 0px;
+      .formspace {
+        width: 100%;
+      }
+    }
+  }
 }
