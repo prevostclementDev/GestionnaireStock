@@ -13,6 +13,6 @@ class Home extends BaseController
             'page_title' => 'Connexion à votre espace entreprise',
         ];
 
-        return view('layout/default-logged',$data);
+        return view('dashboard/index',$data);
     }
 }

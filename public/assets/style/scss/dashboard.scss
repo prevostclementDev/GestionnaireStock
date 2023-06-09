@@ -1,0 +1,37 @@
+@import "sources/base-default-logged-layout";
+@import "sources/core_ui/section";
+@import "sources/core_ui/text";
+
+.title-container {
+  margin-bottom: 39px;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+#container-dashboard {
+  @include flex(flex-start,center,column);
+  section.dashboard-section {
+    margin: 0 0 30px;
+    padding-bottom: 10px;
+    &:last-child {
+      margin: 0;
+    }
+    .top-dashboard-section {
+      padding: 15px 20px;
+      @include flex(space-between,center);
+      border-bottom: 1px solid $c-border;
+      .titlepart {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+    .content-dashboard-section {
+      padding: 10px 20px;
+      .line {
+        @include flex(space-between);
+        margin: 10px 0;
+      }
+    }
+  }
+}
