@@ -40,14 +40,16 @@ label {
 // ###################
 // SUBMIT BUTTON STYLE
 // ###################
-input[type=submit],button.submit_ui_form {
+input[type=submit],.submit_ui_form {
   background: $c-primary;
   outline: none;
   border: none;
+  text-decoration: none;
   @include lexend( 14px , 400 , $c-background);
   padding: 9px 12px;
   border-radius: $input-border-raduis;
   cursor: pointer;
+  display: inline-block;
 }
 
 select {

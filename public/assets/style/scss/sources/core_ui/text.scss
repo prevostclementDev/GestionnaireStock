@@ -1,0 +1,12 @@
+html {
+  @include lexend( 15px , 400 );
+}
+
+h1.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+p.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+}

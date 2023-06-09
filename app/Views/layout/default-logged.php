@@ -1,9 +1,5 @@
 <?= $this->extend('layout/default') ?>
 
-<?= $this->section('style'); ?>
-    <link rel="stylesheet" href="assets/style/css/default-logged-test-min.css">
-<?= $this->endSection(); ?>
-
 <?= $this->section('content'); ?>
         <section id="global-container">
             <section id="navigation-container">
@@ -133,7 +129,7 @@
                     </div>
                 </section>
                 <section id="content-container">
-                    <?= $this->renderSection('content') ?>
+                    <?= $this->renderSection('interface') ?>
                 </section>
             </section>
         </section>
