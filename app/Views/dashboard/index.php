@@ -21,7 +21,7 @@
                         Toutes les commandes
                     </a>
                     <a href="" class="submit_ui_form">
-                        Nouvelle commande
+                        Ajouter une commande
                     </a>
                 </div>
             </div>
