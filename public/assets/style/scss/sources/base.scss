@@ -73,3 +73,28 @@ $c-quantity-less: #EA0C0C;
   top: 0;
   left: 0;
 }
+
+//####################################################
+// GENERAL CLASS
+//####################################################
+
+.title-container {
+  position: relative;
+  &.list-page {
+    margin-top: 30px;
+    @include flex(flex-start);
+    .container-title-action{
+      margin-left: 10px;
+    }
+  }
+
+  .logoInterface {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translateY(-100%);
+  }
+}

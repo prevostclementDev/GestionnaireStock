@@ -52,7 +52,7 @@ input[type=submit],.submit_ui_form {
   display: inline-block;
 }
 
-select {
+select,.style-type-select {
   outline: none;
   border: 1px solid $c-primary;
   @include lexend( 14px , 400 , $c-placeholder-text);
@@ -60,6 +60,14 @@ select {
   border-radius: $input-border-raduis;
   cursor: pointer;
   background: $c-background;
+}
+
+.style-type-select {
+  @include flex(space-between);
+  padding: 9px 12px;
+  span {
+    margin-right: 15px;
+  }
 }
 
 .submit {

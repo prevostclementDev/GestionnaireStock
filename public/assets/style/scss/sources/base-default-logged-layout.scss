@@ -93,6 +93,7 @@
       height: 75px;
       background: $c-background-secondary;
       border-bottom: $c-border-modal;
+      z-index: 999;
 
       @include flex(space-between);
 

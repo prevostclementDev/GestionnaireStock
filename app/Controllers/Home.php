@@ -10,9 +10,9 @@ class Home extends BaseController
     {
         $data = [
             'head_title' => 'page d\'accueil',
-            'page_title' => 'Connexion à votre espace entreprise',
+            'page_title' => 'Les produits',
         ];
 
-        return view('dashboard/index',$data);
+        return view('products/list',$data);
     }
 }
