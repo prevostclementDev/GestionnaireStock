@@ -6,7 +6,15 @@ h1.title {
   font-size: 20px;
   font-weight: 700;
 }
-p.subtitle {
+.subtitle {
   font-size: 14px;
   font-weight: 500;
+}
+
+.lighttext {
+  font-weight: 300;
+}
+
+.error-text {
+  color: $c-notice-error-border;
 }

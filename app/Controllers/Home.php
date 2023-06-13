@@ -13,6 +13,6 @@ class Home extends BaseController
             'page_title' => 'Les produits',
         ];
 
-        return view('products/list',$data);
+        return view('products/single-admin',$data);
     }
 }

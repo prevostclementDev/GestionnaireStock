@@ -91,3 +91,18 @@ select,.style-type-select {
     cursor: pointer;
   }
 }
+
+.form-container-admin {
+  form {
+    margin-top: 30px;
+    &:first-child {
+      margin-top: 0;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .buttonSubmit-container {
+      margin-top: 15px;
+    }
+  }
+}
