@@ -87,6 +87,7 @@
   table {
     width: 100%;
     margin-top: 10px;
+    border: none;
     thead {
       position: sticky;
       top: 75px;
@@ -113,6 +114,10 @@
           }
           &:last-child {
             border-radius: 0  $global-component-raduis  $global-component-raduis 0;
+          }
+          p {
+            @include flex(flex-start,flex-start,column);
+
           }
         }
         &:nth-child(2n) {

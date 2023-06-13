@@ -10,9 +10,9 @@ class Home extends BaseController
     {
         $data = [
             'head_title' => 'page d\'accueil',
-            'page_title' => 'Les produits',
+            'page_title' => 'Les lieux de stockages',
         ];
 
-        return view('products/single-admin',$data);
+        return view('storages/single',$data);
     }
 }
