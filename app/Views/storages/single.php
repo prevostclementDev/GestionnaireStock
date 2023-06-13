@@ -5,6 +5,7 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('interface'); ?>
+
 <section class="title-container">
     <h1 class="title">Information général</h1>
     <form action="">
@@ -75,5 +76,7 @@
         </ul>
     </section>
 </section>
+
+<?= view_cell('LinkProductToStorageCell') ?>
 
 <?= $this->endSection(); ?>
