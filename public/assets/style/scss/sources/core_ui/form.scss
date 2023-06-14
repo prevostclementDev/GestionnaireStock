@@ -17,7 +17,7 @@ label {
     @include lexend( 15px , 500 );
   }
 
-  input {
+  input,textarea {
     width: 100%;
     background: $c-background;
     border: $c-input-border;

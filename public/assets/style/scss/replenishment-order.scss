@@ -1,0 +1,62 @@
+@import "sources/base-default-logged-layout";
+@import "sources/core_ui/text";
+@import "sources/core_ui/modal";
+@import "sources/core_ui/notice";
+@import "sources/core_ui/section";
+@import "sources/note";
+
+.title-container {
+  @include flex(flex-start);
+  .notice {
+    margin-left: 10px;
+  }
+}
+
+.interface-replenishment {
+  margin-top: 35px;
+  @include flex(flex-start,flex-start);
+  flex-wrap: wrap;
+
+  .section-replenishment {
+    margin: 10px;
+    &.created-at-container {
+      width: 100%;
+      .created-at {
+        padding: 15px 60px 15px 20px;
+      }
+    }
+    &.about {
+      padding: 20px 30px;
+      ul {
+        li {
+          margin: 8px 0;
+          &.bottom-separation {
+            margin-bottom: 30px;
+          }
+          form {
+            @include flex(flex-start,flex-start);
+            label {
+              width: fit-content;
+            }
+            input {
+              margin: 5px 10px;
+            }
+          }
+        }
+      }
+    }
+    &.action-container {
+      width: 100%;
+      .action {
+        @include flex(flex-start,flex-start);
+        form {
+          width: fit-content;
+          margin: 0 10px;
+          &:first-child {
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,10 +6,14 @@
 
 <?= $this->section('interface'); ?>
     <section class="title-container list-page">
-        <img src="assets/imgs/product.svg" alt="" class="logoInterface">
-        <h1 class="title"><?= $page_title ?></h1>
+        <img src="assets/imgs/<?php if(isset($svg_path)) { echo $svg_path; } ?>" alt="" class="logoInterface">
+        <h1 class="title"><?php if(isset($page_title)) {echo $page_title;} ?></h1>
         <div class="container-title-action">
-            <button class="submit_ui_form">Ajouter</button>
+            <?php
+            if (isset($id_action) && $id_action != '') {
+                echo '<button class="submit_ui_form" id="'.$id_action.'">Ajouter</button>';
+            }
+            ?>
         </div>
     </section>
 
@@ -61,8 +65,12 @@
             <?= $this->renderSection('list'); ?>
         </div>
     </section>
+
+<?= view_cell('AddProductCell') ?>
+
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_before_content'); ?>
     <script src="assets/js/list-filter-modal-min.js"></script>
+    <script src="assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

@@ -1,7 +1,7 @@
 <?= $this->extend('layout/default-logged.php') ?>
 
 <?= $this->section('style'); ?>
-<link rel="stylesheet" href="assets/style/css/storages-min.css">
+<link rel="stylesheet" href="<?= base_url()?>assets/style/css/storages-min.css">
 <?= $this->endSection(); ?>
 
 <?= $this->section('interface'); ?>
@@ -38,7 +38,7 @@
     <section class="link-section product-link">
         <div class="title-container">
             <h2>Produit liés</h2>
-            <button class="submit_ui_form">Ajouter une liaison</button>
+            <button id="linkproducttostorage-opener" class="submit_ui_form">Ajouter une liaison</button>
         </div>
         <ul class="list-link">
             <li class="on-primary-background wdth-100">
@@ -58,7 +58,7 @@
     <section class="link-section user-link">
         <div class="title-container">
             <h2>Membres liés</h2>
-            <button class="submit_ui_form">Ajouter une liaison</button>
+            <button id="linkusertostorage-opener" class="submit_ui_form">Ajouter une liaison</button>
         </div>
         <ul class="list-link">
             <li class="on-primary-background wdth-100">
@@ -78,5 +78,10 @@
 </section>
 
 <?= view_cell('LinkProductToStorageCell') ?>
+<?= view_cell('LinkUserToStorageCell') ?>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('js_after_content') ?>
+<script src="<?= base_url()?>assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

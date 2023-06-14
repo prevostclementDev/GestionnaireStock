@@ -11,7 +11,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Dashboard');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -29,7 +29,19 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Dashboard::index');
+
+// PRODUCT ROUTE :
+$routes->get('/products', 'Products::index');
+$routes->get('/products/(:num)', 'Products::show/$1');
+
+// STORAGE ROUTE :
+$routes->get('/storages', 'Storages::index');
+$routes->get('/storages/(:num)', 'Storages::show/$1');
+
+// REPLENISHMENT ROUTE :
+$routes->get('/replenishment', 'Replenishment::index');
+$routes->get('/replenishment/(:num)', 'Replenishment::show/$1');
 
 /*
  * --------------------------------------------------------------------

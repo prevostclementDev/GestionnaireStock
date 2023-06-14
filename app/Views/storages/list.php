@@ -1,7 +1,7 @@
 <?= $this->extend('layout/list') ?>
 
 <?= $this->section('style'); ?>
-<link rel="stylesheet" href="assets/style/css/storages-min.css">
+<link rel="stylesheet" href="<?= base_url()?>assets/style/css/storages-min.css">
 <?= $this->endSection(); ?>
 
 <?=$this->section('list'); ?>
@@ -26,7 +26,7 @@
             Suisse
         </td>
         <td>
-            <a href="" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
             Suisse
         </td>
         <td>
-            <a href="" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -54,10 +54,16 @@
             Suisse
         </td>
         <td>
-            <a href="" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     </tbody>
 </table>
 
+<?= view_cell('AddStorageCell') ?>
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('js_before_content') ?>
+<script src="<?= base_url()?>assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

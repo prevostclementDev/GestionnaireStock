@@ -1,13 +1,13 @@
 <?= $this->extend('layout/default-logged'); ?>
 
 <?= $this->section('style'); ?>
-<link rel="stylesheet" href="assets/style/css/products-min.css">
+<link rel="stylesheet" href="<?= base_url()?>assets/style/css/products-min.css">
 <?= $this->endSection(); ?>
 
 <?= $this->section('interface') ?>
 <section class="title-container">
     <h1 class="title">Seringue à perfusion</h1>
-    <div class="subtitle"><p>Emplacement : Etagère B</p>
+    <div class="subtitle"><p>Emplacement : Etagère B</p></div>
 </section>
 
 <!--<div class="subtitle form"><p>Emplacement :</p>-->

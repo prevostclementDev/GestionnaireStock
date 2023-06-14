@@ -1,6 +1,6 @@
-<section class="popupform" id="product-link-to-storage">
+<section class="popupform" id="add-replenishment">
     <div class="content-popup">
-        <h2>Lier un produit à un espace de stockage</h2>
+        <h2>Ajouter / demander un réaprovissionnement</h2>
         <form action="">
             <label for="">
                 <select name="" id="">
@@ -13,15 +13,11 @@
                 </select>
             </label>
             <label for="">
-                <input type="number" placeholder="Quantité">
+                <select name="" id="">
+                    <option value="">Quantité requise</option>
+                </select>
             </label>
-            <label for="">
-                <input type="number" placeholder="Seuil de quantité faible">
-            </label>
-            <label for="">
-                <input type="text" placeholder="Localisation">
-            </label>
-            <input type="submit" value="Lier">
+            <input type="submit" value="Demander / ajouter">
         </form>
     </div>
 </section>

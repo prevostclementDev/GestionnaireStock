@@ -8,6 +8,11 @@
   width: 100vw;
   height: 100vh;
 
+  display: none;
+  &.visible {
+    display: flex;
+  }
+
   .content-popup {
     padding: 50px 40px;
     background: $c-background-secondary;
