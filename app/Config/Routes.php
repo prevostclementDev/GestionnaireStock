@@ -40,8 +40,15 @@ $routes->get('/storages', 'Storages::index');
 $routes->get('/storages/(:num)', 'Storages::show/$1');
 
 // REPLENISHMENT ROUTE :
-$routes->get('/replenishment', 'Replenishment::index');
+$routes->get('/replenishments', 'Replenishment::index');
 $routes->get('/replenishment/(:num)', 'Replenishment::show/$1');
+
+// ORDER ROUTE
+$routes->get('/orders', 'Orders::index');
+$routes->get('/order/(:num)', 'Orders::show/$1');
+
+// USERS ROUTE
+$routes->get('/users','Users::index');
 
 /*
  * --------------------------------------------------------------------

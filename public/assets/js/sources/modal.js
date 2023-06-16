@@ -18,12 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const OpenaddNote = document.querySelector('#addnote-opener');
     const addNote = document.querySelector('#add-note');
 
+    const OpenaddOrder = document.querySelector('#addorder-opener');
+    const addOrder = document.querySelector('#add-order');
+
     eventOpenPopUp(OpenLinkProductToStorage,linkProductToStorage);
     eventOpenPopUp(OpenLinkUserToStorage,linkUserToStorage);
     eventOpenPopUp(OpenaddProduct,addProduct);
     eventOpenPopUp(OpenaddStorage,addStorage);
     eventOpenPopUp(OpenaddReplenishment,addReplenishment);
     eventOpenPopUp(OpenaddNote,addNote);
+    eventOpenPopUp(OpenaddOrder,addOrder);
 
     eventClosePopUp();
 })
