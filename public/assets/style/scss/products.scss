@@ -1,0 +1,105 @@
+@import 'sources/base-default-logged-layout';
+@import "sources/core_ui/text";
+@import "sources/core_ui/section";
+@import "sources/core_ui/modal";
+
+.title-container {
+  .form {
+    @include flex(flex-start,center);
+    p {
+      width: fit-content;
+      white-space: nowrap;
+    }
+    form {
+      @include flex(flex-start,center);
+      label {
+        width: fit-content;
+        input {
+          width: fit-content;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.details {
+  margin-top: 35px;
+  @include flex(flex-start,flex-start);
+  flex-wrap: wrap;
+
+  section {
+    padding: 25px 15px;
+    margin: 10px;
+
+    min-height: 180px;
+
+    &:first-child {
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: 400;
+      width: fit-content;
+      position: relative;
+      margin-bottom: 20px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80%;
+        height: 1px;
+        background: #231E1E66;
+      }
+
+    }
+    .quantityForm {
+      @include flex(center,flex-end,column);
+      margin: 10px 0 0;
+      input[type=number] {
+        width: 100px;
+      }
+      input[type=submit]{
+        width: fit-content;
+        margin-left: 200px;
+      }
+    }
+
+    .submit_ui_form {
+      margin-top: 20px;
+      margin-left: 200px;
+    }
+
+    &.seuil {
+      .levelRegister {
+        margin: 10px 0 0;
+        p {
+          font-weight: 300;
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+      &.form {
+        .levelRegister {
+          label {
+            @include flex(flex-start);
+            input {
+              width: 100px;
+              margin-left: 10px;
+            }
+          }
+          input[type=submit]{
+            width: fit-content;
+            margin-left: 300px;
+          }
+        }
+      }
+    }
+
+  }
+}
+

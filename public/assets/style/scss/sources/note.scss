@@ -1,0 +1,30 @@
+.note {
+  padding: 25px 30px;
+  .title-container {
+    button {
+      margin-left: 15px;
+    }
+  }
+  .container-note {
+    @include flex(flex-start,flex-start,column);
+    margin-top: 20px;
+    .note-user {
+      width: 100%;
+      background: $c-background;
+      border-radius: $global-component-raduis;
+      padding: 10px;
+      p {
+        &.text {
+          background: $c-background-secondary;
+          border-radius: $global-component-raduis;
+          padding: 20px 10px;
+          margin-bottom: 10px;
+        }
+        &.about-text {
+          text-align: right;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}

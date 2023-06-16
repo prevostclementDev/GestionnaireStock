@@ -17,7 +17,7 @@ label {
     @include lexend( 15px , 500 );
   }
 
-  input {
+  input,textarea {
     width: 100%;
     background: $c-background;
     border: $c-input-border;
@@ -52,7 +52,7 @@ input[type=submit],.submit_ui_form {
   display: inline-block;
 }
 
-select {
+select,.style-type-select {
   outline: none;
   border: 1px solid $c-primary;
   @include lexend( 14px , 400 , $c-placeholder-text);
@@ -60,6 +60,14 @@ select {
   border-radius: $input-border-raduis;
   cursor: pointer;
   background: $c-background;
+}
+
+.style-type-select {
+  @include flex(space-between);
+  padding: 9px 12px;
+  span {
+    margin-right: 15px;
+  }
 }
 
 .submit {
@@ -81,5 +89,20 @@ select {
     border: none;
     outline: none;
     cursor: pointer;
+  }
+}
+
+.form-container-admin {
+  form {
+    margin-top: 30px;
+    &:first-child {
+      margin-top: 0;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .buttonSubmit-container {
+      margin-top: 15px;
+    }
   }
 }

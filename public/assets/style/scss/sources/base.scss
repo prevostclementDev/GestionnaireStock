@@ -14,7 +14,7 @@ $c-secondary : #C60E0E;
 $c-background : #F8F8F8;
 $c-background-secondary : #FFFFFF;
 
-$c-background-modal : #F8F8F8;
+$c-background-modal : rgba(248, 248, 248, 0.7);
 $c-border-modal : 1px solid #E4E4E4;
 $box-shadow-modal : 0px 1px 4px #E4E4E4;
 $global-component-raduis : 8px;
@@ -72,4 +72,29 @@ $c-quantity-less: #EA0C0C;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+//####################################################
+// GENERAL CLASS
+//####################################################
+
+.title-container {
+  position: relative;
+  &.list-page {
+    margin-top: 30px;
+    @include flex(flex-start);
+    .container-title-action{
+      margin-left: 10px;
+    }
+  }
+
+  .logoInterface {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translateY(-100%);
+  }
 }

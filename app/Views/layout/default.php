@@ -12,6 +12,6 @@
     <?= $this->renderSection('js_before_content') ?>
     <?= $this->renderSection('content') ?>
     <?= $this->renderSection('js_after_content') ?>
-    <script src="assets/js/disabled-mobile-version-min.js"></script>
+    <script src="<?= base_url()?>assets/js/disabled-mobile-version-min.js"></script>
     </body>
 </html>

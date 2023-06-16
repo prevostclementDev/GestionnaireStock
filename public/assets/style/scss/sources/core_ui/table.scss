@@ -1,0 +1,132 @@
+#list-table-container {
+  margin-top: 60px;
+
+  .action-part {
+    @include flex(space-between);
+
+    .leftpart {
+      @include flex(flex-start);
+    }
+
+    .rightpart {
+      @include flex(flex-end);
+      width: 40%;
+    }
+
+    form{
+      @include flex(flex-end);
+
+      &.filter {
+        margin-left: 10px;
+        position: relative;
+      }
+
+      input[type=submit] {
+        margin-left: 5px;
+      }
+
+      &.pagination {
+        width: 100%;
+        input,label {
+          width: 35px;
+          padding: 0 0;
+          height: 35px;
+        }
+
+        input {
+          padding-left: 5px;
+        }
+
+        .submit_ui_form{
+          margin: 0 8px;
+          &.next {
+            svg {
+              transform: rotate(180deg);
+              transform-origin: center;
+            }
+          }
+        }
+
+        .container-result-number-input {
+          margin-left: 8px;
+        }
+
+      }
+
+    }
+
+    .formselector {
+      @include flex(center,flex-end,column);
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      background: $c-background-secondary;
+      border: $c-border-modal;
+      border-radius: $global-component-raduis;
+      padding: 15px 10px;
+      min-width: 200px;
+      z-index: 9999;
+
+      select {
+        width: 100%;
+      }
+
+      input {
+        margin-top: 5px;
+      }
+
+      &.visible {
+        display: flex;
+      }
+    }
+
+  }
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    thead {
+      position: sticky;
+      top: 75px;
+      th {
+        text-align: left;
+        background: $c-primary;
+        color: $c-background-secondary;
+        padding: 10px;
+        &:first-child {
+          border-radius:  $global-component-raduis 0 0  $global-component-raduis;
+        }
+        &:last-child {
+          border-radius: 0  $global-component-raduis  $global-component-raduis 0;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 20px 15px;
+          background: $c-table-primary;
+          &:first-child {
+            border-radius:  $global-component-raduis 0 0  $global-component-raduis;
+          }
+          &:last-child {
+            border-radius: 0  $global-component-raduis  $global-component-raduis 0;
+          }
+          p {
+            @include flex(flex-start,flex-start,column);
+
+          }
+        }
+        &:nth-child(2n) {
+          td {
+            background: $c-table-secondary;
+          }
+        }
+      }
+    }
+  }
+
+}

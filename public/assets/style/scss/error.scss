@@ -1,0 +1,29 @@
+@import "sources/base";
+@import "sources/core_ui/link";
+@import "sources/core_ui/text";
+@import "sources/core_ui/form";
+
+.wrapError {
+
+  @include flex(center,center,column);
+  min-height: 100vh;
+  position: relative;
+
+  .topLogo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+
+  .center {
+    @include flex(center,center,column);
+    .logoError {
+      min-width: 400px;
+      height: auto;
+    }
+    .action {
+      margin-top: 20px;
+    }
+  }
+
+}

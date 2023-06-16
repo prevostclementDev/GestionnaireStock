@@ -1,0 +1,17 @@
+.notice {
+  padding: 7px 18px;
+  width: fit-content;
+  border-radius: $global-component-raduis;
+  &.warning {
+    background: $c-notice-warning-background;
+    border: 1px solid $c-notice-warning-border;
+  }
+  &.success {
+    background: $c-notice-success-background;
+    border: 1px solid $c-notice-success-border;
+  }
+  &.error {
+    background: $c-notice-error-background;
+    border: 1px solid $c-notice-error-border;
+  }
+}
