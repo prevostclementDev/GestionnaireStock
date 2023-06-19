@@ -76,8 +76,10 @@
     </div>
 </section>
 
-<?= view_cell('AddNoteCell'); ?>
+<?= $this->endSection(); ?>
 
+<?= $this->section('modal'); ?>
+<?= view_cell('AddNoteCell'); ?>
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_after_content'); ?>

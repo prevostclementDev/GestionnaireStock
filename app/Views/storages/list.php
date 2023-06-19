@@ -26,7 +26,7 @@
             Suisse
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
             Suisse
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -54,14 +54,16 @@
             Suisse
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     </tbody>
 </table>
 
-<?= view_cell('AddStorageCell') ?>
+<?= $this->endSection(); ?>
 
+<?= $this->section('modal'); ?>
+<?= view_cell('AddStorageCell'); ?>
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_before_content') ?>

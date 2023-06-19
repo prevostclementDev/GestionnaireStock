@@ -77,9 +77,11 @@
     </section>
 </section>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('modal'); ?>
 <?= view_cell('LinkProductToStorageCell') ?>
 <?= view_cell('LinkUserToStorageCell') ?>
-
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_after_content') ?>

@@ -13,4 +13,10 @@ class Users extends BaseController
         ];
         return view('users/list',$data);
     }
+
+    public function show($id) : string {
+        $data = ['head_title'=>'L\'utilisateur n°'.$id];
+        return view('users/single',$data);
+    }
+
 }

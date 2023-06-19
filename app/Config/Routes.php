@@ -33,11 +33,11 @@ $routes->get('/', 'Dashboard::index');
 
 // PRODUCT ROUTE :
 $routes->get('/products', 'Products::index');
-$routes->get('/products/(:num)', 'Products::show/$1');
+$routes->get('/product/(:num)', 'Products::show/$1');
 
 // STORAGE ROUTE :
 $routes->get('/storages', 'Storages::index');
-$routes->get('/storages/(:num)', 'Storages::show/$1');
+$routes->get('/storage/(:num)', 'Storages::show/$1');
 
 // REPLENISHMENT ROUTE :
 $routes->get('/replenishments', 'Replenishment::index');
@@ -49,6 +49,13 @@ $routes->get('/order/(:num)', 'Orders::show/$1');
 
 // USERS ROUTE
 $routes->get('/users','Users::index');
+$routes->get('/user/(:num)','Users::show/$1');
+
+// ENTREPRISE ROUTE
+$routes->get('/entreprise','Entreprises::index');
+
+// LOGS ROUTE
+$routes->get('/logs','Logs::index');
 
 /*
  * --------------------------------------------------------------------
