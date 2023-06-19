@@ -90,10 +90,4 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('modal'); ?>
-<?= view_cell('addOrderCell') ?>
-<?= $this->endSection(); ?>
 
-<?= $this->section('js_after_content'); ?>
-<script src="assets/js/modal-min.js"></script>
-<?= $this->endSection(); ?>
