@@ -20,7 +20,7 @@
                     <a href="" class="submit_ui_form">
                         Toutes les commandes
                     </a>
-                    <a href="" class="submit_ui_form">
+                    <a href="" class="submit_ui_form" id="addorder-opener">
                         Ajouter une commande
                     </a>
                 </div>
@@ -87,4 +87,13 @@
             </div>
         </section>
     </section>
+
+<?= $this->endSection(); ?>
+
+<?= $this->section('modal'); ?>
+<?= view_cell('addOrderCell') ?>
+<?= $this->endSection(); ?>
+
+<?= $this->section('js_after_content'); ?>
+<script src="assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

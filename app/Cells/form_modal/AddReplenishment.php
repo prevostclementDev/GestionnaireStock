@@ -13,9 +13,7 @@
                 </select>
             </label>
             <label for="">
-                <select name="" id="">
-                    <option value="">Quantité requise</option>
-                </select>
+                <input type="number" placeholder="Quantité requise">
             </label>
             <input type="submit" value="Demander / ajouter">
         </form>

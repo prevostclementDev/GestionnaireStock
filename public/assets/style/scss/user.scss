@@ -1,0 +1,60 @@
+@import "sources/base-default-logged-layout";
+@import "sources/core_ui/text";
+@import "sources/core_ui/modal";
+@import "sources/core_ui/section";
+
+.title-container {
+  @include flex(flex-start,flex-end);
+  .additionnal {
+    margin-left: 5px;
+  }
+}
+
+.about {
+  margin-top: 20px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .list-name {
+    margin-top: 15px;
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  form {
+    margin-top: 15px;
+    .action-container {
+      margin-top: 15px;
+    }
+  }
+
+}
+
+.user-section {
+  margin-top: 15px;
+  padding: 20px 30px;
+  ul {
+    li {
+      @include flex(space-between,center,row);
+      background: $c-table-secondary;
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: $global-component-raduis;
+      font-weight: 900;
+      form {
+        margin: 10px 0;
+        @include flex(flex-start);
+        input {
+          margin-left: 5px;
+        }
+      }
+      &.align-top {
+        align-items: flex-start;
+      }
+    }
+  }
+}

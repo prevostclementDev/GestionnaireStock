@@ -11,6 +11,7 @@
     <body>
     <?= $this->renderSection('js_before_content') ?>
     <?= $this->renderSection('content') ?>
+    <?= $this->renderSection('modal'); ?>
     <?= $this->renderSection('js_after_content') ?>
     <script src="<?= base_url()?>assets/js/disabled-mobile-version-min.js"></script>
     </body>

@@ -15,7 +15,7 @@
                 <input type="number" placeholder="Prix de vente">
             </label>
             <label for="">
-                <input type="number" placeholder="Unité ex : Litre, metre, flacon, unité">
+                <input type="text" placeholder="Unité ex : Litre, metre, flacon, unité">
             </label>
             <input type="submit" value="Ajouter">
         </form>

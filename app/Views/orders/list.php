@@ -36,11 +36,13 @@ $table->addRow($lines);
 $table->addRow($lines);
 
 echo $table->generate();
-
-echo view_cell('AddOrderCell');
-
 ?>
 <?= $this->endSection(); ?>
+
+<?= $this->section('modal'); ?>
+<?= view_cell('AddOrderCell'); ?>
+<?= $this->endSection(); ?>
+
 
 <?= $this->section('js_after_content') ?>
     <script src="<?= base_url() ?>assets/js/modal-min.js"></script>

@@ -66,11 +66,8 @@
         </div>
     </section>
 
-<?= view_cell('AddProductCell') ?>
-
 <?= $this->endSection(); ?>
 
-<?= $this->section('js_before_content'); ?>
+<?= $this->section('js_after_content'); ?>
     <script src="assets/js/list-filter-modal-min.js"></script>
-    <script src="assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

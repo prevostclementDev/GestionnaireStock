@@ -1,7 +1,7 @@
 <?= $this->extend('layout/list') ?>
 
 <?= $this->section('style'); ?>
-<link rel="stylesheet" href="<?= base_url()?>assets/style/css/storages-min.css">
+<link rel="stylesheet" href="<?= base_url()?>assets/style/css/user-min.css">
 <?= $this->endSection(); ?>
 
 <?=$this->section('list'); ?>
@@ -25,7 +25,7 @@
             Non affecté
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>user/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -38,7 +38,7 @@
             Non affecté
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>user/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     <tr>
@@ -51,16 +51,18 @@
             Non affecté
         </td>
         <td>
-            <a href="<?= base_url()?>storages/13" class="bordered-link">Voir</a>
+            <a href="<?= base_url()?>user/13" class="bordered-link">Voir</a>
         </td>
     </tr>
     </tbody>
 </table>
 
-<?= view_cell('AddStorageCell') ?>
-
 <?= $this->endSection(); ?>
 
-<?= $this->section('js_before_content') ?>
+<?= $this->section('modal') ?>
+<?= view_cell('AddUserCell'); ?>
+<?= $this->endSection(); ?>
+
+<?= $this->section('js_after_content') ?>
 <script src="<?= base_url()?>assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

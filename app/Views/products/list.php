@@ -16,7 +16,7 @@ $lines = array(
     '121 pieces',
     '10 euros' ,
     '30 euros',
-    '<a href="'.base_url().'products/10" class="bordered-link">Voir</a>'
+    '<a href="'.base_url().'product/10" class="bordered-link">Voir</a>'
 );
 
 $table->addRow($lines);
@@ -29,4 +29,13 @@ echo $table->generate();
 
 ?>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('modal'); ?>
+<?= view_cell('AddProductCell'); ?>
+<?= $this->endSection(); ?>
+
+
+<?= $this->section('js_after_content'); ?>
+<script src="assets/js/modal-min.js"></script>
 <?= $this->endSection(); ?>

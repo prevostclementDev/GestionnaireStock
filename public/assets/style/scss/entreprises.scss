@@ -1,0 +1,13 @@
+@import "sources/base-default-logged-layout";
+@import "sources/core_ui/text";
+
+.title-container {
+  @include flex(flex-start,flex-start,column);
+}
+
+#form-entreprise {
+  margin: 30px 0;
+  .action-container {
+    margin-top: 20px;
+  }
+}
