@@ -14,7 +14,7 @@
 
     <div class="submit left">
         <input type="submit" value="Se connecter">
-        <a class="bordered-link" href="login/entreprise">Créer un espace entreprise</a>
+        <a class="bordered-link" href="<?= base_url() ?>se-creer-un-compte">Créer un espace entreprise</a>
     </div>
 </form>
 <?= $this->endSection() ?>
