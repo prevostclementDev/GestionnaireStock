@@ -18,7 +18,7 @@
         </label>
         <div class="submit left">
             <button class="update_step submit_ui_form">Continuer l'inscription</button>
-            <a class="bordered-link" href="login/entreprise">Se connecter</a>
+            <a class="bordered-link" href="<?= base_url() ?>se-connecter">Se connecter</a>
         </div>
     </div>
     <div class="register step inactive" id="step2">
@@ -39,8 +39,8 @@
             <input type="password" name="password" placeholder="Mot de passe...">
         </label>
         <div class="submit left">
-            <button type="submit">Créer l’espace entreprise</button>
-            <a class="bordered-link" href="login/entreprise">Se connecter</a>
+            <input type="submit" value="Créer l’espace entreprise">
+            <a class="bordered-link" href="<?= base_url() ?>se-connecter">Se connecter</a>
         </div>
     </div>
 </form>
