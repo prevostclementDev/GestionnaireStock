@@ -16,7 +16,7 @@
             ?>
         </div>
     </section>
-
+    <?= $this->renderSection('notice'); ?>
     <section id="list-table-container">
         <div class="action-part">
             <div class="leftpart">

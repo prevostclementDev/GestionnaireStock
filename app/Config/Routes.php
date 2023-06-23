@@ -30,37 +30,57 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index', ['filter' => 'authentification']);
-
+// ###############
 // PRODUCT ROUTE :
+// ###############
 $routes->get('/products', 'Products::index', ['filter' => 'authentification']);
 $routes->get('/product/(:num)', 'Products::show/$1', ['filter' => 'authentification']);
 
+// ###############
 // STORAGE ROUTE :
+// ###############
 $routes->get('/storages', 'Storages::index', ['filter' => 'authentification']);
 $routes->get('/storage/(:num)', 'Storages::show/$1', ['filter' => 'authentification']);
 
+// #####################
 // REPLENISHMENT ROUTE :
+// #####################
 $routes->get('/replenishments', 'Replenishment::index', ['filter' => 'authentification']);
 $routes->get('/replenishment/(:num)', 'Replenishment::show/$1', ['filter' => 'authentification']);
 
+// ###########
 // ORDER ROUTE
+// ###########
 $routes->get('/orders', 'Orders::index', ['filter' => 'authentification']);
 $routes->get('/order/(:num)', 'Orders::show/$1', ['filter' => 'authentification']);
 
+// ###########
 // USERS ROUTE
+// ###########
 $routes->get('/users','Users::index', ['filter' => 'authentification']);
 $routes->get('/user/(:num)','Users::show/$1', ['filter' => 'authentification']);
+$routes->post('/users','Users::add', ['filter' => 'authentification']);
 
+// ################
 // ENTREPRISE ROUTE
+// ################
 $routes->get('/entreprise','Entreprises::index', ['filter' => 'authentification']);
 
+// ##########
 // LOGS ROUTE
+// ##########
 $routes->get('/logs','Logs::index', ['filter' => 'authentification']);
 
+// ###########
 // LOGIN ROUTE
-$routes->get('/se-connecter','Login::index');
-$routes->get('/se-creer-un-compte','Login::register');
+// ###########
+$routes->get('/se-connecter','Login::index'); // GET LOGIN PAGE
+$routes->post('/se-connecter','Login::index'); // GET LOGIN PAGE WHEN POST FORM
 
+$routes->get('/se-creer-un-compte','Login::register'); // GET REGISTER PAGE
+$routes->post('/se-creer-un-compte','Login::register'); // GET REGISTER PAGE WHEN POST FORM
+
+$routes->get('/disconnect','Login::disconnect', ['filter' => 'authentification']); // DISCONNECT USER
 
 /*
  * --------------------------------------------------------------------

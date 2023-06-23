@@ -6,18 +6,18 @@
 
 <?= $this->section('interface'); ?>
 <section class="title-container">
-    <h1 class="title">Clément Prévost</h1>
-    <div class="additionnal lighttext">Affecté</div>
+    <h1 class="title"><?= $user['first_name'].' '.$user['last_name'] ?></h1>
+    <div class="additionnal lighttext"><?= $user['type'] ?></div>
 </section>
 <section class="about">
     <h2>Information général</h2>
     <ul class="list-name">
-        <li>Nom : <span class="boldtext">Prévost</span></li>
-        <li>Prénom : <span class="boldtext">Clément</span></li>
+        <li>Nom : <span class="boldtext"><?= $user['first_name'] ?></span></li>
+        <li>Prénom : <span class="boldtext"><?= $user['last_name'] ?></span></li>
     </ul>
     <form action="">
         <label for="">
-            <input type="email" value="clementprevost45@gmail.com">
+            <input type="email" value="<?= $user['email'] ?>">
         </label>
         <div class="action-container">
             <input type="submit" value="Enregister">

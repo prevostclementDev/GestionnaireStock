@@ -14,6 +14,27 @@ class Validation extends BaseConfig
     // Setup
     // --------------------------------------------------------------------
 
+    public array $login = [
+        'email' => 'required|max_length[255]|valid_email',
+        'password' => 'required|max_length[255]|min_length[8]',
+    ];
+
+    public array $register = [
+        'name' => 'required|max_length[255]',
+        'country' => 'required|max_length[255]',
+        'email' => 'required|max_length[255]|valid_email|is_unique[sstck_users.email]',
+        'first_name' => 'required|max_length[255]',
+        'last_name' => 'required|max_length[255]',
+        'password' => 'required|max_length[255]|min_length[8]',
+    ];
+
+    public array $add_user = [
+        'email' => 'required|max_length[255]|valid_email|is_unique[sstck_users.email]',
+        'first_name' => 'required|max_length[255]',
+        'last_name' => 'required|max_length[255]',
+        'password' => 'required|max_length[255]|min_length[8]',
+    ];
+
     /**
      * Stores the classes that contain the
      * rules that are available.
