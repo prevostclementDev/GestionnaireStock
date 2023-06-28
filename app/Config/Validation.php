@@ -35,6 +35,29 @@ class Validation extends BaseConfig
         'password' => 'required|max_length[255]|min_length[8]',
     ];
 
+    public array $update_email_user = [
+        'email' => 'required|max_length[255]|valid_email|is_unique[sstck_users.email]',
+    ];
+
+    public array $add_storages = [
+        'name' => 'required|max_length[255]',
+        'adresse' => 'required|max_length[255]',
+        'country' => 'required|max_length[255]',
+    ];
+
+    public array $update_entreprise = [
+        'name' => 'required|max_length[255]',
+        'country' => 'required|max_length[255]',
+    ];
+
+    public array $add_product = [
+        'singular_name' => 'required|max_length[255]',
+        'billing_price' => 'required|numeric',
+        'selling_price' => 'required|numeric',
+        'unite' => 'required|max_length[255]',
+        'plurial_name' => 'required|max_length[255]',
+    ];
+
     /**
      * Stores the classes that contain the
      * rules that are available.

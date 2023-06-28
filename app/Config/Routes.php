@@ -36,11 +36,18 @@ $routes->get('/', 'Dashboard::index', ['filter' => 'authentification']);
 $routes->get('/products', 'Products::index', ['filter' => 'authentification']);
 $routes->get('/product/(:num)', 'Products::show/$1', ['filter' => 'authentification']);
 
+$routes->post('/products', 'Products::add', ['filter' => 'authentification']);
+
 // ###############
 // STORAGE ROUTE :
 // ###############
 $routes->get('/storages', 'Storages::index', ['filter' => 'authentification']);
 $routes->get('/storage/(:num)', 'Storages::show/$1', ['filter' => 'authentification']);
+
+$routes->post('/storages', 'Storages::add', ['filter' => 'authentification']);
+$routes->post('/storage/(:num)', 'Storages::update/$1', ['filter' => 'authentification']);
+
+$routes->get('/storage/delete/(:num)', 'Storages::delete/$1', ['filter' => 'authentification']);
 
 // #####################
 // REPLENISHMENT ROUTE :
@@ -59,12 +66,17 @@ $routes->get('/order/(:num)', 'Orders::show/$1', ['filter' => 'authentification'
 // ###########
 $routes->get('/users','Users::index', ['filter' => 'authentification']);
 $routes->get('/user/(:num)','Users::show/$1', ['filter' => 'authentification']);
+
+$routes->get('user/delete/(:num)','Users::delete/$1', ['filter' => 'authentification']);
+
 $routes->post('/users','Users::add', ['filter' => 'authentification']);
+$routes->post('/user/(:num)','Users::update/$1', ['filter' => 'authentification']);
 
 // ################
 // ENTREPRISE ROUTE
 // ################
 $routes->get('/entreprise','Entreprises::index', ['filter' => 'authentification']);
+$routes->post('/entreprise','Entreprises::update', ['filter' => 'authentification']);
 
 // ##########
 // LOGS ROUTE

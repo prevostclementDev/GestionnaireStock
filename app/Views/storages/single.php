@@ -8,22 +8,23 @@
 
 <section class="title-container">
     <h1 class="title">Information général</h1>
-    <form action="">
+    <form action="<?= base_url('storage/'.$storage['id']) ?>" method="POST">
+        <?= csrf_field() ?>
         <label for="">
             <span class="lighttext">Nom du lieu de stockage</span>
-            <input type="text" value="Magasin B">
+            <input name="name" type="text" value="<?= $storage['name'] ?>">
         </label>
         <label for="">
             <span class="lighttext">Adresse</span>
-            <input type="text" value="195 route de sur les crêts, bernex">
+            <input name="adresse" type="text" value="<?= $storage['adresse'] ?>">
         </label>
         <label for="">
             <span class="lighttext">Pays</span>
-            <input type="text" value="France">
+            <input name="country" type="text" value="<?= $storage['country'] ?>">
         </label>
         <div class="buttonSubmit-container">
             <input type="submit" value="Enregistrer">
-            <button class="submit_ui_form">Supprimer</button>
+            <a href="<?= base_url('storage/delete/'.$storage['id']) ?>" class="submit_ui_form">Supprimer</a>
         </div>
     </form>
 </section>
@@ -80,8 +81,8 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('modal'); ?>
-<?= view_cell('LinkProductToStorageCell') ?>
-<?= view_cell('LinkUserToStorageCell') ?>
+<?= view('form_modal/LinkProductToStorage') ?>
+<?= view('form_modal/LinkUserToStorage') ?>
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_after_content') ?>

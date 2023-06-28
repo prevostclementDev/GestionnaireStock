@@ -16,26 +16,27 @@ class Users extends BaseController
         'svg_path' => 'user.svg',
         'users_list' => array(),
     );
+    private userModel $base_request;
 
     public function __construct()
     {
         helper('form');
+        $userModel = model(userModel::class);
+        $this->base_request = $userModel->where('id_entreprise', session()->get('id_entreprise'));
     }
 
     public function index(): string {
         $data = $this->default_data_list;
 
-        $userModel = model(userModel::class);
-        $data['users_list'] = $userModel->where('id_entreprise',session()->get('id_entreprise'))->findAll();
+        $data['users_list'] = $this->base_request->findAll();
 
         return view('users/list',$data);
     }
 
-    public function show($id) : string {
+    public function show(Int $id) : string {
         $data = ['head_title'=>'L\'utilisateur n°'.$id];
 
-        $userModel = model(userModel::class);
-        $data['user'] = $userModel->where('id_entreprise',session()->get('id_entreprise'))->find($id);
+        $data['user'] = $this->base_request->find($id);
 
         if($data['user'] === null){
             throw new PageNotFoundException('Il n\'y à pas d\'utilisateur avec l\'id = '.$id);
@@ -82,4 +83,54 @@ class Users extends BaseController
 
     }
 
+    public function delete(Int $id) : \CodeIgniter\HTTP\RedirectResponse {
+
+        if(!$this->request->is('get')) {
+            throw new \Exception('Invalid Request');
+        }
+
+        $userModel = model(userModel::class);
+
+        if(is_numeric($id)) {
+            $res = $userModel->delete($id);
+            if($res === true) {
+                return redirect()->to(base_url('users'));
+            }
+        }
+
+        throw new \Exception('Cette action est impossible');
+
+    }
+
+    public function update(Int $id) : string|\CodeIgniter\HTTP\RedirectResponse {
+        if(is_numeric($id)) {
+
+            $data = ['head_title'=>'L\'utilisateur n°'.$id];
+
+            $userModel = model(userModel::class);
+            $user = $userModel->find($id);
+
+            if($user !== null) {
+
+                $validation = \Config\Services::validation();
+                $dataUpdateUser = $this->request->getPost(array(
+                    'email',
+                ));
+
+                $data['user'] = $user;
+
+                if($validation->run($dataUpdateUser,'update_email_user')) {
+                    $data['user']['email'] = $dataUpdateUser['email'];
+                    $userModel->save($data['user']);
+
+                    return view('users/single',$data);
+                }
+
+                return view('users/single',$data);
+
+            }
+
+        }
+        return throw new PageNotFoundException();
+    }
 }

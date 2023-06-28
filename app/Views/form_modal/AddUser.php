@@ -2,6 +2,7 @@
     <div class="content-popup">
         <h2>Ajouter un utilisateur</h2>
         <form action="<?= base_url('users') ?>" method="POST">
+            <?= csrf_field() ?>
             <label for="">
                 <input type="email" name="email" placeholder="Email...">
             </label>

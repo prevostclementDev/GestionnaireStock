@@ -6,7 +6,7 @@
 
 <?= $this->section('interface') ?>
 <section class="title-container">
-    <h1 class="title">Seringue à perfusion</h1>
+    <h1 class="title"><?= $product['singular_name'] ?></h1>
     <div class="subtitle"><p>Emplacement : Etagère B</p></div>
 </section>
 

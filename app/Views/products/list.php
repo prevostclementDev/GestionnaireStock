@@ -5,34 +5,50 @@
 <?= $this->endSection(); ?>
 
 <?php
-echo $this->section('list');
+echo $this->section('notice');
+if(!empty(validation_errors())) {
 
-$table = new \CodeIgniter\View\Table();
-
-$table->setHeading(['Nom du produits', 'Quantité dans l’espace sélectionnée', 'Prix d’achat', 'Prix de vente' , 'Action']);
-
-$lines = array(
-        'Seringue à perfusion',
-    '121 pieces',
-    '10 euros' ,
-    '30 euros',
-    '<a href="'.base_url().'product/10" class="bordered-link">Voir</a>'
-);
-
-$table->addRow($lines);
-$table->addRow($lines);
-$table->addRow($lines);
-$table->addRow($lines);
-$table->addRow($lines);
-
-echo $table->generate();
-
+    ?>
+    <div class="notice error global-notice"><?= validation_list_errors(); ?></div>
+    <?php
+}
+echo $this->endSection();
 ?>
 
+<?= $this->section('list'); ?>
+<table>
+    <thead>
+        <tr>
+            <th>Nom du produits</th>
+            <th>Quantité dans l’espace sélectionnée</th>
+            <th>Prix d’achat</th>
+            <th>Prix de vente</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        if(empty($products_list)) {
+            echo '<tr><td colspan="5">Aucun produit trouvée</td></tr>';
+        } else {
+            foreach ($products_list as $product) {
+                echo
+                '<tr>
+                    <td>'.$product['singular_name'].'</td>
+                    <td>Aucun espace selectionnée</td>
+                    <td>'.$product['billing_price'].'</td>
+                    <td>'.$product['selling_price'].'</td>
+                    <td><a href="'.base_url('product/'.$product['id']).'">Voir</a></td>
+                </tr>';
+            }
+        }
+        ?>
+    </tbody>
+</table>
 <?= $this->endSection(); ?>
 
 <?= $this->section('modal'); ?>
-<?= view_cell('AddProductCell'); ?>
+<?= view('form_modal/AddProduct'); ?>
 <?= $this->endSection(); ?>
 
 

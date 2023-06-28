@@ -1,21 +1,22 @@
 <section class="popupform" id="add-product">
     <div class="content-popup">
         <h2>Ajouter un produit</h2>
-        <form action="">
+        <form action="<?= base_url('products') ?>" method="POST">
+            <?= csrf_field() ?>
             <label for="">
-                <input type="text" placeholder="Nom au singulié...">
+                <input name="singular_name" type="text" placeholder="Nom au singulié...">
             </label>
             <label for="">
-                <input type="text" placeholder="Nom au pluriel...">
+                <input name="plurial_name" type="text" placeholder="Nom au pluriel...">
             </label>
             <label for="">
-                <input type="number" placeholder="Prix d’achat">
+                <input name="billing_price" step="0.01" type="number" placeholder="Prix d’achat">
             </label>
             <label for="">
-                <input type="number" placeholder="Prix de vente">
+                <input name="selling_price" step="0.01" type="number" placeholder="Prix de vente">
             </label>
             <label for="">
-                <input type="text" placeholder="Unité ex : Litre, metre, flacon, unité">
+                <input name="unite" type="text" placeholder="Unité ex : Litre, metre, flacon, unité">
             </label>
             <input type="submit" value="Ajouter">
         </form>
