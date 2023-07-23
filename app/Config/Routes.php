@@ -37,6 +37,7 @@ $routes->get('/products', 'Products::index', ['filter' => 'authentification']);
 $routes->get('/product/(:num)', 'Products::show/$1', ['filter' => 'authentification']);
 
 $routes->post('/products', 'Products::add', ['filter' => 'authentification']);
+$routes->post('/product/(:num)', 'Products::update/$1', ['filter' => 'authentification']);
 
 // ###############
 // STORAGE ROUTE :

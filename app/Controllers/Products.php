@@ -41,7 +41,60 @@ class products extends BaseController
             throw new PageNotFoundException();
         }
 
-        return view('products/single',$data);
+        return view('products/single-admin',$data);
+    }
+
+    public function update(Int $id): string {
+
+        if(!$this->request->is('post')) {
+            throw new \Exception('Invalid request');
+        }
+
+        $data = [
+            'head_title' => 'Single produits',
+        ];
+
+        $productModel = model(productModel::class);
+        $data['product'] = $this->base_request->find($id);
+
+        if($data['product'] === null) {
+            throw new PageNotFoundException();
+        }
+
+        $formHandler = [
+            'update_basic_data_product' => [
+                'validation_name' => 'add_product',
+                'getPosts' => [
+                    'singular_name',
+                    'plurial_name',
+                    'billing_price',
+                    'selling_price',
+                    'unite'
+                ],
+            ]
+        ];
+
+        if(!empty($this->request->getPost(['update_basic_data_product'])) && $this->request->getPost(['update_basic_data_product'])['update_basic_data_product'] !== null ) {
+            $formHandlerUsable = $formHandler['update_basic_data_product'];
+        } else {
+            throw new \Exception('Formulaire non prépraré');
+        }
+
+        $validation = \Config\Services::validation();
+        $dataPost = $this->request->getPost($formHandlerUsable['getPosts']);
+
+        if(!$validation->run($dataPost,$formHandlerUsable['validation_name'])) {
+            return view('products/single-admin',$data);
+        }
+
+        foreach ($dataPost as $item => $value) {
+            $data['product'][$item] = $value;
+        }
+
+        $productModel->save($data['product']);
+
+        return view('products/single-admin',$data);
+
     }
 
     public function add(): string|\CodeIgniter\HTTP\RedirectResponse {
