@@ -122,8 +122,8 @@
                         </div>
                         <div class="container-action active">
                             <ul class="action-list">
-                                <li><a class="text_ui_link" href="">Mon profil</a></li>
-                                <li><a class="text_ui_link" href="">Me deconnecter</a></li>
+                                <li><a class="text_ui_link" href="<?= base_url('user/'.session()->get('id')) ?>">Mon profil</a></li>
+                                <li><a class="text_ui_link" href="<?= base_url('disconnect') ?>">Me deconnecter</a></li>
                             </ul>
                         </div>
                     </div>

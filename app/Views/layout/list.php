@@ -1,12 +1,12 @@
 <?= $this->extend('layout/default-logged'); ?>
 
 <?= $this->section('style'); ?>
-    <link rel="stylesheet" href="assets/style/css/lists-min.css">
+    <link rel="stylesheet" href="<?= base_url()?>assets/style/css/lists-min.css">
 <?= $this->endSection(); ?>
 
 <?= $this->section('interface'); ?>
     <section class="title-container list-page">
-        <img src="assets/imgs/<?php if(isset($svg_path)) { echo $svg_path; } ?>" alt="" class="logoInterface">
+        <img src="<?= base_url() ?>assets/imgs/<?php  if(isset($svg_path)) { echo $svg_path; } ?>" alt="" class="logoInterface">
         <h1 class="title"><?php if(isset($page_title)) {echo $page_title;} ?></h1>
         <div class="container-title-action">
             <?php
@@ -16,7 +16,7 @@
             ?>
         </div>
     </section>
-
+    <?= $this->renderSection('notice'); ?>
     <section id="list-table-container">
         <div class="action-part">
             <div class="leftpart">
@@ -69,5 +69,5 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_after_content'); ?>
-    <script src="assets/js/list-filter-modal-min.js"></script>
+    <script src="<?= base_url()?>assets/js/list-filter-modal-min.js"></script>
 <?= $this->endSection(); ?>

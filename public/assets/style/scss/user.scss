@@ -2,6 +2,7 @@
 @import "sources/core_ui/text";
 @import "sources/core_ui/modal";
 @import "sources/core_ui/section";
+@import "sources/core_ui/notice";
 
 .title-container {
   @include flex(flex-start,flex-end);

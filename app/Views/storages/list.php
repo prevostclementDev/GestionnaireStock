@@ -4,6 +4,17 @@
 <link rel="stylesheet" href="<?= base_url()?>assets/style/css/storages-min.css">
 <?= $this->endSection(); ?>
 
+<?php
+echo $this->section('notice');
+if(!empty(validation_errors())) {
+
+    ?>
+    <div class="notice error global-notice"><?= validation_list_errors(); ?></div>
+    <?php
+}
+echo $this->endSection();
+?>
+
 <?=$this->section('list'); ?>
 
 <table>
@@ -15,55 +26,31 @@
         </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>
-            <p>
-                <span>Armoire B4</span>
-                <span class="lighttext">Membre - Sélectionnée</span>
-            </p>
-        </td>
-        <td>
-            Suisse
-        </td>
-        <td>
-            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>
-                <span>Armoire B4</span>
-                <span class="lighttext">Membre - Sélectionnée</span>
-            </p>
-        </td>
-        <td>
-            Suisse
-        </td>
-        <td>
-            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <p>
-                <span>Armoire B4</span>
-                <span class="lighttext">Administrateur</span>
-            </p>
-        </td>
-        <td>
-            Suisse
-        </td>
-        <td>
-            <a href="<?= base_url()?>storage/13" class="bordered-link">Voir</a>
-        </td>
-    </tr>
+    <?php
+
+    if(empty($storages_list)) {
+        echo '<tr><td colspan="3">Aucun lieu de stockage trouvé</td></tr>';
+    } else {
+        foreach ($storages_list as $storage) {
+            echo '<tr>
+                <td>
+                    <p><span>'.$storage['name'].'</span>
+                    <span class="lighttext">Administrateur</span></p>
+                </td>
+                <td>'.$storage['country'].'</td>
+                <td> <a class="bordered-link" href="storage/'.$storage['id'].'">Voir</a> </td>
+                </tr>';
+        }
+    }
+
+    ?>
     </tbody>
 </table>
 
 <?= $this->endSection(); ?>
 
 <?= $this->section('modal'); ?>
-<?= view_cell('AddStorageCell'); ?>
+<?= view('form_modal/AddStorage'); ?>
 <?= $this->endSection(); ?>
 
 <?= $this->section('js_before_content') ?>

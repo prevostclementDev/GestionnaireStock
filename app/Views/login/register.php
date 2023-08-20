@@ -1,5 +1,16 @@
 <?= $this->extend('layout/login') ?>
 
+<?php
+echo $this->section('notice');
+if(!empty(validation_errors())) {
+
+    ?>
+    <div class="notice error login-notice"><?= validation_list_errors(); ?></div>
+    <?php
+}
+echo $this->endSection();
+?>
+
 <?= $this->section('formlogin') ?>
 <form action="" method="post">
     <?= csrf_field() ?>
@@ -10,11 +21,11 @@
     <div class="register step" id="step1">
         <label for="entreprise_name">
             <span>Nom de l'entreprise :</span>
-            <input type="text" name="entreprise_name" placeholder="Ex : SynchroStock">
+            <input type="text" name="name" placeholder="Ex : SynchroStock">
         </label>
         <label for="entreprise_location">
             <span>Pays de l'entreprise :</span>
-            <input type="text" name="entreprise_location" placeholder="France, Espagne...">
+            <input type="text" name="country" placeholder="France, Espagne...">
         </label>
         <div class="submit left">
             <button class="update_step submit_ui_form">Continuer l'inscription</button>

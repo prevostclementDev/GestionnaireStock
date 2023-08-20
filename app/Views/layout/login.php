@@ -19,6 +19,8 @@
                 <h1><?= $page_title ?></h1>
             </div>
 
+            <?= $this->renderSection('notice') ?>
+
             <div class="formspace">
                 <?= $this->renderSection('formlogin') ?>
             </div>
